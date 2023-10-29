@@ -26,7 +26,7 @@ class Depense
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $remarque = null;
 
-    #[ORM\ManyToOne(inversedBy: 'user')]
+    #[ORM\ManyToOne(inversedBy: 'depenses')]
     private ?User $user = null;
 
     public function getId(): ?int
