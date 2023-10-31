@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de Dépense{% endblock %}
+
+{% block body %}
+    <h1>Formulaire de Dépense</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.date) }}
+    {{ form_row(form.somme) }}
+    {{ form_row(form.achat) }}
+    {{ form_row(form.remarque) }}
+
+    <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+{% endblock %}
