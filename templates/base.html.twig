@@ -4,3 +4,22 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
     <p>Aujourd'hui, c'est le {{ "now"|date("d/m/Y") }}.</p>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        const socket = new WebSocket('ws://localhost:8080'); 
+
+        socket.onopen = (event) => {
+            console.log('Connexion WebSocket ouverte.');
+        };
+
+        socket.onmessage = (event) => {
+            console.log('Message WebSocket reçu:', event.data);
+        };
+
+        socket.onclose = (event) => {
+            console.log('Connexion WebSocket fermée.');
+        };
+    </script>
+{% endblock %}

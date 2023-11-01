@@ -1,7 +1,25 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Page d'Accueil{% endblock %}
+
 {% block body %}
     <div class="container mt-5">
         <h1>Bonjour!</h1>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h2>Formulaire de Dépense</h2>
+                <p>Un aperçu du formulaire de dépense :</p>
+                {# Ajoutez un aperçu du formulaire de dépense ici #}
+                <a href="{{ path('app_depense_form') }}" class="btn btn-primary">Accéder au formulaire de dépense</a>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Historique</h2>
+                <p>Un aperçu de l'historique :</p>
+                {# Ajoutez un aperçu de l'historique ici #}
+                <a href="{{ path('app_historique') }}" class="btn btn-primary">Accéder à l'historique</a>
+            </div>
+        </div>
     </div>
 {% endblock %}

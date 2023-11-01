@@ -34,8 +34,13 @@ class DepenseFormController extends AbstractController
             return $this->redirectToRoute('page_apres_creation');
         }
 
+        $dateDuJour = new \DateTime();
+        $dateDuJour->setTimezone(new \DateTimeZone('Europe/Paris')); 
+        $dateDuJour = $dateDuJour->format('d/m/Y');
+
         return $this->render('depense_form/index.html.twig', [
             'form' => $form->createView(),
+            'dateDuJour' => $dateDuJour,
         ]);
     }
 }

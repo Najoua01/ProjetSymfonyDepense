@@ -21,13 +21,12 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
-    .addEntry('vue1', './assets/js/vue1.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
     // will require an extra script tag for runtime.js
-    // but, you probably want this, unless you're building a single-page app
+    // but, you probably want this unless you're building a single-page app
     .enableSingleRuntimeChunk()
 
     /*
